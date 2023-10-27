@@ -1,8 +1,9 @@
 const sections = document.querySelectorAll("section");
 
+// Add a class of "featured" to the first section element on the page.
 sections[0].classList.add("featured")
 
-
+// Create the following article element with JavaScript and add at the end of the section.posts element.
 const article = document.createElement('article');
 const img = document.createElement('img')
 const headerThree = document.createElement("h3")
@@ -50,18 +51,21 @@ secPara.append(a)
 
 sections[1].append(article)
 
+// Move the first article from inside the section.posts element to become the second article and move the second article so that it is the first article.
 const main = document.querySelector("main");
 main.append(sections[0])
 
-
+//Remove the "All Posts" link from the header.
 const link = document.querySelector('a');
 link.remove()
 
-
+// Remove the span element that contains the "Read Time" in the featured post. The featured post is the first post on the page.
 span.remove()
+
+// Remove the last post from the page, titled "Stop Planning".
 article.remove()  
 
-
+// Remove all titles from all non-featured posts.
 var articles = document.querySelectorAll('article');
 
 
