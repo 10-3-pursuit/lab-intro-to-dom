@@ -51,7 +51,7 @@ allPostArticles[2].remove();
 const nonFeaturedHeaders = document.querySelectorAll('h3');
 nonFeaturedHeaders[1].remove();
 nonFeaturedHeaders[0].remove();
-// console.log(postsClass)
+
 
 
 
