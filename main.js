@@ -36,6 +36,7 @@ article.append(aside)
 const posts = document.querySelector('.posts')
 posts.append(article)
 
-// const secondArticle = posts.splice(1, 1)
-// posts.prepend(secondArticle)
-// console.log(post)
+const secondArticle = posts.children[1]
+posts.removeChild(secondArticle)
+posts.prepend(secondArticle)
+console.log(posts.children)
