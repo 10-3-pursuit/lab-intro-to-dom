@@ -25,21 +25,25 @@ link.textContent = 'Read more...';
 asideP.append(link);
 aside.append(asideP);
 article.append(aside);
-
 const postsClass = document.querySelector('.posts');
-const firstArticle = document.querySelector('.posts article');
-postsClass.appendChild(firstArticle);
+postsClass.append(article)
+
+
+const allPostArticles = document.querySelectorAll('.posts article');
+const firstPostArticle = allPostArticles[0];
+const secondPostArticle = allPostArticles[1];
+postsClass.insertBefore(secondPostArticle, firstPostArticle)
+
 
 const allPostsParent = document.querySelector('header ul')
 const allPostsLink = document.querySelector('header li');
 allPostsParent.removeChild(allPostsLink);
 
-// const header = document.querySelector('header');
-// console.log(header)
 
 const firstSpanParent = document.querySelector('aside p');
 const firstSpan = document.querySelector('span');
 firstSpanParent.removeChild(firstSpan)
-// console.log(firstSpanParent)
+console.log(firstSpanParent)
+// asideP.removeChild(span)
 
 
