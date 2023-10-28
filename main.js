@@ -26,24 +26,32 @@ asideP.append(link);
 aside.append(asideP);
 article.append(aside);
 const postsClass = document.querySelector('.posts');
-postsClass.append(article)
+postsClass.append(article);
 
 
 const allPostArticles = document.querySelectorAll('.posts article');
 const firstPostArticle = allPostArticles[0];
 const secondPostArticle = allPostArticles[1];
-postsClass.insertBefore(secondPostArticle, firstPostArticle)
+postsClass.insertBefore(secondPostArticle, firstPostArticle);
 
 
-const allPostsParent = document.querySelector('header ul')
+const allPostsParent = document.querySelector('header ul');
 const allPostsLink = document.querySelector('header li');
 allPostsParent.removeChild(allPostsLink);
 
 
 const firstSpanParent = document.querySelector('aside p');
 const firstSpan = document.querySelector('span');
-firstSpanParent.removeChild(firstSpan)
-console.log(firstSpanParent)
-// asideP.removeChild(span)
+firstSpanParent.removeChild(firstSpan);
+
+
+allPostArticles[2].remove();
+
+
+const nonFeaturedHeaders = document.querySelectorAll('h3');
+nonFeaturedHeaders[1].remove();
+nonFeaturedHeaders[0].remove();
+// console.log(postsClass)
+
 
 
