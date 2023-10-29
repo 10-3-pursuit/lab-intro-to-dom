@@ -39,4 +39,15 @@ posts.append(article)
 const secondArticle = posts.children[1]
 posts.removeChild(secondArticle)
 posts.prepend(secondArticle)
-console.log(posts.children)
+
+const anchor1 = document.querySelector('a')
+anchor1.innerText = ''
+
+const span1 = document.querySelector('span')
+span1.innerText = ''
+
+posts.removeChild(article)
+
+const header3 = document.querySelectorAll('h3')
+header3.forEach(header => header.innerText = '')
+console.log(header3)
