@@ -75,9 +75,12 @@ articleThree.remove();
 
 sectionPosts.append(articleTwo);
 sectionPosts.append(articleOne);
+sectionPosts.append(articleThree);
 
 const allPostsObj = document.querySelector("header li");
 allPostsObj.remove();
 
 const spanOne= document.querySelector("section article span");
 spanOne.remove();
+
+articleThree.remove();
