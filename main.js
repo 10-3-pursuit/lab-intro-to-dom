@@ -60,3 +60,19 @@ article.append(aside);
 
 const sectionPosts = document.querySelector("section.posts");
 sectionPosts.append(article);
+
+// Get the first article from inside the section.posts element
+const articleOne = document.querySelector("section.posts article");
+// remove the first article
+articleOne.remove();
+
+// Get the first article from inside the section.posts element
+const articleTwo = document.querySelector("section.posts article");
+articleTwo.remove();
+
+const articleThree = document.querySelector("section.posts article");
+articleThree.remove();
+
+sectionPosts.append(articleTwo);
+sectionPosts.append(articleOne);
+
