@@ -78,4 +78,6 @@ sectionPosts.append(articleOne);
 
 const allPostsObj = document.querySelector("header li");
 allPostsObj.remove();
-// console.log(allPostsObj);
+
+const spanOne= document.querySelector("section article span");
+spanOne.remove();
