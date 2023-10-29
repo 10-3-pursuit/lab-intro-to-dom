@@ -76,3 +76,6 @@ articleThree.remove();
 sectionPosts.append(articleTwo);
 sectionPosts.append(articleOne);
 
+const allPostsObj = document.querySelector("header li");
+allPostsObj.remove();
+// console.log(allPostsObj);
