@@ -70,17 +70,28 @@ articleOne.remove();
 const articleTwo = document.querySelector("section.posts article");
 articleTwo.remove();
 
+// get the last article
 const articleThree = document.querySelector("section.posts article");
 articleThree.remove();
 
+// add the articles back with the second one being added first
 sectionPosts.append(articleTwo);
 sectionPosts.append(articleOne);
 sectionPosts.append(articleThree);
 
+// get the first list object from the header
 const allPostsObj = document.querySelector("header li");
 allPostsObj.remove();
 
+// get the first span from the first article and section
 const spanOne= document.querySelector("section article span");
 spanOne.remove();
 
 articleThree.remove();
+
+// get all articles
+const articles = document.querySelectorAll("section.posts article");
+articles.forEach((article) => {
+    const h3 = article.children[1];
+    h3.remove();
+})
