@@ -75,7 +75,19 @@ headerLink.remove();
 
 
 //created a variable to get to the span element we want 
-const spanWithReadElement = document.querySelector("span")
+const removeSpan = document.querySelector('span')
+removeSpan.innerText = ''; 
+
+// remove last article
+newArticle.remove();
+
+
+// remove non featured headers 
+const removeHeaders = document.querySelectorAll('h3');
+removeHeaders[0].remove();
+removeHeaders[1].remove(); 
+
+
 
 
 
