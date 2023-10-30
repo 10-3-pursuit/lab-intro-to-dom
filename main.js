@@ -80,3 +80,40 @@ const sectionPosts = document.querySelector("section.posts");
 
 // Append to end of section.posts
 sectionPosts.append(article);
+
+// Grab all the articles
+const articleList = document.querySelectorAll(".posts article")
+
+// Declare article one and two
+let articleOne = articleList[0];
+let articleTwo = articleList[1];
+
+// prepend them in order to swap places
+sectionPosts.prepend(articleOne);
+sectionPosts.prepend(articleTwo);
+
+// grab all posts
+const allPosts = document.querySelector("a");
+
+// Remove the "All Posts" nav button
+allPosts.remove();
+
+// Remove the span element that contains the "Read Time" in the featured post. The featured post is the first post on the page.
+
+// Query the span
+const targetSpan = document.querySelector('main section article span')
+
+// remove the span
+targetSpan.remove();
+
+
+// Remove the last post from the page, titled "Stop Planning".
+article.remove();
+
+
+// query the h3
+const titles = document.querySelectorAll("h3");
+
+titles.forEach((title) => {
+    title.remove();
+})
