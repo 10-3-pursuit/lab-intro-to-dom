@@ -58,11 +58,12 @@ const postArticleOne = articlesInPost[0]
 const postArticleTwo = articlesInPost[1]
 
 // Move the second <article> before the first one in the .posts container
-postsContainer.insertBefore(postArticleTwo, postArticleOne)
+postsContainer.prepend(postArticleOne)
+postsContainer.prepend(postArticleTwo)
 
 // Get the parent of 'All Posts' link and remove the link from the nav
 const allPostsParent = document.querySelector('header ul')
-const allPostsLink = document.querySelector('header li')
+const allPostsLink = document.querySelector('li')
 allPostsParent.removeChild(allPostsLink)
 
 // Get the parent of the first <span> in <aside> and remove the <span>
