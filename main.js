@@ -60,7 +60,7 @@ const postArticleTwo = articlesInPost[1]
 // Move the second <article> before the first one in the .posts container
 postsContainer.insertBefore(postArticleTwo, postArticleOne)
 
-// Get the parent of 'All Posts' link and remove the link from the navigation
+// Get the parent of 'All Posts' link and remove the link from the nav
 const allPostsParent = document.querySelector('header ul')
 const allPostsLink = document.querySelector('header li')
 allPostsParent.removeChild(allPostsLink)
@@ -74,6 +74,6 @@ firstSpanParent.removeChild(firstSpan)
 articlesInPost[2].remove()
 
 // Get all non-featured <h3> elements and remove them
-const nonFeaturedTitles = document.querySelectorAll('.posts h3');
-nonFeaturedTitles[1].remove()
-nonFeaturedTitles[0].remove()
+const nonFeaturedTitles = document.querySelectorAll('h3')
+nonFeaturedTitles.forEach(title => title.innerText = '')
+console.log(nonFeaturedTitles)
