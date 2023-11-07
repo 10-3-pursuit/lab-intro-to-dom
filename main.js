@@ -1,4 +1,4 @@
-console.log("Hello!"); // test to see if shows up in DOM
+// console.log("Hello!"); // test to see if shows up in DOM
 
 // adding class "featured" to first section
 
