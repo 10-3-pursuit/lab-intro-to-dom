@@ -1,5 +1,13 @@
 console.log("Hello!"); // test to see if shows up in DOM
 
+// adding class "featured" to first section
+
+function addFeatured () {
+    const sections = document.querySelectorAll("section"); // makes an array of everything with section tag
+    featuredSection = sections[0].classList.add("featured"); // selectsfirst element of array and adds class attribute "featured"
+};
+addFeatured (); // fx called when page loads with DOM
+
 function generateArticle () { // fx creates template of article tags
     const article = document.createElement("article");; // create variable for article tag by grabbing it from html code
     article.classList.add("posts"); // class name for article that we want is posts
