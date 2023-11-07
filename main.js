@@ -33,18 +33,43 @@ function generateArticle () { // fx creates template of article tags
 };
 generateArticle(); // fx called when page loads with DOM
 
+// function rearrangeArticles() {
+//   // first select posts section using
+//   const sectionPostsArr = document.querySelectorAll(".posts article"); // the select all but for articles since that's the child
+//       const firstArticle = sectionPostsArr[0];
+//       const secondArticle = sectionPostsArr[1]; // the second element for article is at index 1
+//       sectionPostsArr.insertBefore(secondArticle, firstArticle); // insertBefore is a DOM method that allows you to insert a node (in this case, secondArticle) before a reference node (in this case, articlesArr[0]) within a parent element (in this case, postsSection)
+// };
+// rearrangeArticles();
+
 function rearrangeArticles() {
-  // first select posts section using
-  const postsSection = document.querySelector(".posts"); // the select all but for articles since that's the child
-  const articlesArr = document.querySelectorAll("article"); // then use if statement to make sure there are 2
-    if (articlesArr.length >=2) { // the querySelectorAll makes an array so you can use the .length property
-      const secondArticle = articlesArr[1]; // the second element for article is at index 1
-      postsSection.removeChild(secondArticle); //remove it but only to put it back in anyways just at different position
-      postsSection.insertBefore(secondArticle, articlesArr[0]); // insertBefore is a DOM method that allows you to insert a node (in this case, secondArticle) before a reference node (in this case, articlesArr[0]) within a parent element (in this case, postsSection)
-    }
-};
+  // select the parent element (the section with class "posts").
+  const postsSection = document.querySelector(".posts");
+
+  // select the articles within the parent element.
+  const articlesArr = postsSection.querySelectorAll("article"); // instead of document write postsSection variable since it's salready selected and stored
+
+  // make sure there are at least two articles to rearrange.
+  if (articlesArr.length >= 2) {
+    // get the first and second articles querySelectorAll outputs an array so you can use bracket notation
+    const firstArticle = articlesArr[0];
+    const secondArticle = articlesArr[1];
+
+    // Remove the second article from its current position.
+    postsSection.removeChild(secondArticle); // must remove bc insertBefore method moves the element but doesn't remove it from its original position. removeChild instead of remove because postSection is the parent. In this case, you explicitly specify the parent element (parentElement) and the child element (childElement) you want to remove. But if using .remove() you don't need to put stuff in parentheses
+
+    // Insert the second article before the first article.
+    postsSection.insertBefore(secondArticle, firstArticle);
+  }
+}
+
 rearrangeArticles();
 
+
+// function removeAllPostsLink () {
+//   document.querySelector(ul);
+// }
+// removeAllPostsLink();
 
 
 function removeThirdArticle() {
