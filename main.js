@@ -60,13 +60,13 @@ rearrangeArticles();
 function removeAllPostsLink () {
   document.querySelector(ul);
 }
-removeAllPostsLink();
+// removeAllPostsLink();
 
 // Step 5: Remove the span element that contains the "Read Time" in the featured post. 
 function removeSpanReadTime () {
 
 }
-removeSpanReadTime();
+// removeSpanReadTime();
 
 // Step 6: Remove the last post from the page, titled "Stop Planning"
 function removeThirdArticle() {
@@ -83,4 +83,4 @@ removeThirdArticle();
 function removeTitlesNonFeatured () {
 
 }
-removeTitlesNonFeatured ();
+// removeTitlesNonFeatured ();
