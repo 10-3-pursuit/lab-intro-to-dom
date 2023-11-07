@@ -3,6 +3,8 @@ console.log("Hello!"); // test to see if shows up in DOM
 function generateArticle () { // fx creates template of article tags
     const article = document.createElement("article");; // create variable for article tag by grabbing it from html code
     article.classList.add("posts"); // class name for article that we want is posts
+    
+    //makes the template
     article.innerHTML = `<img
         src="./images/paul-gilmore-unsplash.jpg"
         alt="Image of a mountain in front of a lake."
@@ -19,8 +21,8 @@ function generateArticle () { // fx creates template of article tags
           ><a href="#">Read more...</a>
         </p>
       </aside>`
-      document.querySelector(".posts").append(article); // append mountain img to article
+      document.querySelector(".posts").append(article); // finds section .posts using queryselector then appends article template after section with class .posts
     
     return article;
 };
-generateArticle();
+generateArticle(); // fx called when page loads with DOM
