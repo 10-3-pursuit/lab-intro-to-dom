@@ -26,3 +26,13 @@ function generateArticle () { // fx creates template of article tags
     return article;
 };
 generateArticle(); // fx called when page loads with DOM
+
+function removeThirdArticle() {
+    const articles = document.querySelectorAll(".posts article"); //selects and looks through articles under section with class posts (the method acts like an array kinda)
+    if (articles.length > 2) { // Check if there is a third article
+        const thirdArticle = articles[2]; // querySelectAll puts everything with relevant tags in an arry so u can select elements. In this case I want 3rd element in array
+        thirdArticle.remove(); // it's gonna find 3rd article appended (not because of html it got appended bc of JS fx) and remove it
+    }
+}
+
+removeThirdArticle();
