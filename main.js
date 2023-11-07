@@ -7,7 +7,7 @@ function addFeatured () {
 };
 addFeatured (); // fx called when page loads with DOM
 
-// Step 2: Creat article element to add after section with class attribute posts
+// Step 2: Create article element to add after section with class attribute posts
 function generateArticle () { // fx creates template of article tags
     const article = document.createElement("article");; // create variable for article tag by grabbing it from html code
     article.classList.add("posts"); // class name for article that we want is posts
@@ -33,15 +33,7 @@ function generateArticle () { // fx creates template of article tags
 };
 generateArticle(); // fx called when page loads with DOM
 
-// function rearrangeArticles() {
-//   // first select posts section using
-//   const sectionPostsArr = document.querySelectorAll(".posts article"); // the select all but for articles since that's the child
-//       const firstArticle = sectionPostsArr[0];
-//       const secondArticle = sectionPostsArr[1]; // the second element for article is at index 1
-//       sectionPostsArr.insertBefore(secondArticle, firstArticle); // insertBefore is a DOM method that allows you to insert a node (in this case, secondArticle) before a reference node (in this case, articlesArr[0]) within a parent element (in this case, postsSection)
-// };
-// rearrangeArticles();
-
+// Step 3: move first article to 2nd position & vice versa
 function rearrangeArticles() {
   // select the parent element (the section with class "posts").
   const postsSection = document.querySelector(".posts");
@@ -53,25 +45,30 @@ function rearrangeArticles() {
   if (articlesArr.length >= 2) {
     // get the first and second articles querySelectorAll outputs an array so you can use bracket notation
     const firstArticle = articlesArr[0];
-    const secondArticle = articlesArr[1];
+    const secondArticle = articlesArr[1]; // the second element for article is at index 1
 
-    // Remove the second article from its current position.
+    // Remove the second article from its current position. (So that there are no duplicates)
     postsSection.removeChild(secondArticle); // must remove bc insertBefore method moves the element but doesn't remove it from its original position. removeChild instead of remove because postSection is the parent. In this case, you explicitly specify the parent element (parentElement) and the child element (childElement) you want to remove. But if using .remove() you don't need to put stuff in parentheses
 
     // Insert the second article before the first article.
-    postsSection.insertBefore(secondArticle, firstArticle);
+    postsSection.insertBefore(secondArticle, firstArticle); // insertBefore is a DOM method that allows you to insert a node (in this case, secondArticle) before a reference node (in this case, articlesArr[0]) within a parent element (in this case, postsSection)
   }
 }
-
 rearrangeArticles();
 
+// Step 4: Remove the "All Posts" link from the header.
+function removeAllPostsLink () {
+  document.querySelector(ul);
+}
+removeAllPostsLink();
 
-// function removeAllPostsLink () {
-//   document.querySelector(ul);
-// }
-// removeAllPostsLink();
+// Step 5: Remove the span element that contains the "Read Time" in the featured post. 
+function removeSpanReadTime () {
 
+}
+removeSpanReadTime();
 
+// Step 6: Remove the last post from the page, titled "Stop Planning"
 function removeThirdArticle() {
     const articles = document.querySelectorAll(".posts article"); //selects and looks through articles under section with class posts (the method acts like an array kinda)
     if (articles.length > 2) { // Check if there is a third article
@@ -79,5 +76,11 @@ function removeThirdArticle() {
         thirdArticle.remove(); // it's gonna find 3rd article appended (not because of html it got appended bc of JS fx) and remove it
     }
 }
-
 removeThirdArticle();
+
+// Step 7: Remove all titles from all non-featured posts.
+
+function removeTitlesNonFeatured () {
+
+}
+removeTitlesNonFeatured ();
