@@ -96,15 +96,18 @@ rearrangeArticles();
 
 // Step 4: Remove the "All Posts" link from the header.
 function removeAllPostsLink () {
-  document.querySelector(ul);
+  const allPostsLink = document.querySelector("nav a"); // selects anchor element "a" inside "nav" which is inside "header"
+  allPostsLink.remove();
 }
-// removeAllPostsLink();
+removeAllPostsLink();
 
 // Step 5: Remove the span element that contains the "Read Time" in the featured post. 
 function removeSpanReadTime () {
-
+  const featuredSpan = document.querySelector("aside p");
+  const spanElement = document.querySelector("span");
+  featuredSpan.removeChild(spanElement);
 }
-// removeSpanReadTime();
+removeSpanReadTime();
 
 // Step 6: Remove the last post from the page, titled "Stop Planning"
 function removeThirdArticle() {
@@ -119,6 +122,7 @@ removeThirdArticle();
 // Step 7: Remove all titles from all non-featured posts.
 
 function removeTitlesNonFeatured () {
-
+  const nonFeatured = document.querySelectorAll("h3"); // outputs array of all h3 elements
+  nonFeatured.forEach((element) => element.remove()); // iterate and apply .remove() to each
 }
-// removeTitlesNonFeatured ();
+removeTitlesNonFeatured ();
