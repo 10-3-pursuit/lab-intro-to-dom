@@ -9,7 +9,7 @@ addFeatured (); // fx called when page loads with DOM
 
 // Step 2: Create article element to add after section with class attribute posts
 function generateArticle () { // fx creates template of article tags
-    const article = document.createElement("article");; // create variable for article tag by grabbing it from html code
+    const article = document.createElement("article"); // create variable for article tag by grabbing it from html code
     article.classList.add("posts"); // class name for article that we want is posts
     //makes the template
     article.innerHTML = `<img
@@ -31,7 +31,45 @@ function generateArticle () { // fx creates template of article tags
       document.querySelector(".posts").append(article); // finds section .posts using queryselector then appends article template after section with class .posts
     return article;
 };
-generateArticle(); // fx called when page loads with DOM
+//generateArticle(); // fx called when page loads with DOM
+
+// --- a different way to do step 2 ---
+function generateArticleAlt () {
+  const article = document.createElement("article"); // create article element
+  const image = document.createElement("img"); // create img element
+    image.setAttribute("src", "./images/paul-gilmore-unsplash.jpg");
+    image.setAttribute("alt", "Image of a mountain in front of a lake.");
+    article.appendChild(image);
+  const hThree = document.createElement("h3");
+    hThree.innerText = "Stop Planning";
+    article.appendChild(hThree);
+  const p = document.createElement("p");
+    p.innerText = `You -- yes you! You're an over-planner, I can tell. It's time to stop
+    planning so much and instead focusing on relaxing. Taking a break at all is
+    so stressful these days; why add to the stress by overworking yourself?`
+    article.appendChild(p);
+  //appending stuff to aside to later append aside to article
+  const aside = document.createElement("aside");
+  const asideP = document.createElement("p");
+  const span = document.createElement("span");
+  //appending child span to parent p inside aside grand parent
+    span.innerHTML = `<span><strong>Read Time:</strong> 4 Minutes</span
+  >`
+    asideP.appendChild(span);
+  const readMore = document.createElement("a");
+    readMore.setAttribute("href", "#");
+    readMore.textContent = "Read more..." // no appendage to span needed because same line
+   
+    asideP.appendChild(readMore);
+    aside.appendChild(asideP);
+    article.appendChild(aside);
+    
+  const postsSection = document.querySelector("section.posts");
+    postsSection.append(article);
+  
+  return article;
+}
+generateArticleAlt ();
 
 // Step 3: move first article to 2nd position & vice versa
 function rearrangeArticles() {
